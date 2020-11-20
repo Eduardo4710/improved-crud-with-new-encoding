@@ -1,0 +1,126 @@
+@import url('fonts/Gochi_Hand/GochiHand-Regular');
+@import url('fonts/Reenie_Beanie/ReenieBeanie-Regular');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    
+       
+    background:linear-gradient(135deg, #CE9FFC 0%,#7367F0 100%);
+}
+.main
+{
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: center;
+width: 100%;
+height: auto;
+max-width: 80%;
+margin-left: 10%;
+margin-right: 10%;
+margin-top:4%; 
+
+
+
+}
+
+
+hr{
+    height: 1px;
+    border: none;
+    background: #7a7a7a;
+    max-width: 80%;
+    margin: 0 auto; 
+}
+p,h1{
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1{
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align:center;
+    width: 100%;
+    color:rgb(3, 17, 3);
+    text-shadow: 3px  3px rgba(221, 17, 17, 0.281);
+}
+
+
+
+#agregar{
+    text-align:center;
+    width: 100%;
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    position: relative;
+    left: 50px;
+    top:20px;
+    background: rgb(8, 139, 172);
+    border-radius:8px;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+    padding:10px 10px;
+   
+    }
+    #insert{
+    text-align:center;
+    }
+    
+  /* Estilo de la tabla */
+    table{
+        background-color: rgb(255, 255, 255);
+        text-align: left;
+        border-collapse: collapse;
+        width: 100%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border: transparent;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.692);
+    }
+    
+    th, td{
+        padding: 10px;
+        text-align: center;
+        border-top:1px solid rgba(56, 55, 55, 0.315) ;
+    }
+    .col1
+    {
+        border-top-left-radius: 10px;
+    }
+    .col6
+    {
+        border-top-right-radius: 10px;
+    }
+    thead{
+        background:linear-gradient(135deg, #df2c3b 0%,#A1051D 100%);
+        border-bottom-left-radius: 30px;
+        color: white;
+        text-align: left;
+        font-size: 20px;
+        font-family: 'BenchNine', sans-serif;
+      
+        
+    }
+    
+    tr:hover td{
+        background-color: #0505052a;
+        color: rgb(8, 8, 8);
+      
+        
+    }
+    
+    
+    
+    
+   
