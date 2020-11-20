@@ -92,11 +92,13 @@ h1{
     th, td{
         padding: 10px;
         text-align: center;
-        border-top:1px solid rgba(56, 55, 55, 0.315) ;
+        border-top:1px solid rgba(56, 55, 55, 0.219) ;
+      
     }
     .col1
     {
         border-top-left-radius: 10px;
+       
     }
     .col6
     {
