@@ -2,13 +2,13 @@
 try{
     $conexion=mysqli_connect("localhost","root","");
     mysqli_select_db($conexion,"3622290_pruebas");
-    echo '<script>alert("La conexion es correcta " )</script>';
+  
 
 }
 catch (Exception $e)
 {
     die("El error de Conexión es: ". $e->getMessage());
-    echo '<script>alert(" Error de Conexión " )</script>';
+    echo " Error de Conexión ";
 }
 
 /*
