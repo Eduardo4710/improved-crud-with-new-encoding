@@ -11,6 +11,12 @@
     <title>Opreciones CRUD</title>
 </head>
 <body>
+
+<header class="menu_opciones">
+<figure > 
+    <img class="user_logo" src="iconos/user.jpg"  alt="">
+</figure>
+</header>
     <br>
     <h1>Interfaz para usar las opreciones CRUD</h1>
     <hr>
