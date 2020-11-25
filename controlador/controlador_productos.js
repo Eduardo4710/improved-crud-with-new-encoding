@@ -1,6 +1,5 @@
 $(function()
 {
-
 full_table();
 });
 
@@ -10,7 +9,6 @@ function full_table()
 		url:'modelo/show_data.php',
         type:"post",
         data:{ id:1},
-
 		error:function(){alert("error de archivo");},
 		success:function(res){
         console.log(res);
@@ -24,14 +22,13 @@ function full_table()
               <td>${datosProdct.precio}</td>
               <td>${datosProdct.existencia}</td>
               <td>${datosProdct.categoria}</td>
-              <td><button>22</button> <button>22</button> </td>
-                 </tr>
-              `
-             // tabla+='<tr><td>'+js[i].id+'</td><td>'+js[i].Imagen+'</td><td>'+js[i].Nombre+'</td><td>'+js[i].Sexo+'</td><td>'+js[i].Fecha+'</td></tr>';
-          }
-
+              <td>
+              <button class="eliminar"><img src="iconos/eliminar.png"width="15" height=""></button> 
+              <button class="editar"><img src="iconos/editar.png" width="15" height=""></button> 
+              </td>
+                 </tr>`
+                }
           $("#show_result").html(tabla);
         }
-
 	});
 }

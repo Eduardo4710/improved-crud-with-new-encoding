@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_icono.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@400;700&display=swap" rel="stylesheet">
 
@@ -13,8 +14,7 @@
     <br>
     <h1>Interfaz para usar las opreciones CRUD</h1>
     <hr>
-    <th colspan="6"
-     id="inset"> <a href="productos.php"  id="agregar">Agregar datos aqui</a></th>
+    <button  id="agregar"><img src="iconos/agregar.png" width="35" height=""></button>
     <br><br>
     <br>
     <br>

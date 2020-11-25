@@ -1,0 +1,15 @@
+.eliminar,.editar
+{
+    margin-right:5px ;
+    font-size: 15px;
+    padding: 5px;
+}
+.eliminar{color: rgb(250, 14, 14);}
+.editar{color: rgb(0, 149, 207);}
+.eliminar,.editar:hover{cursor: pointer;}
+.eliminar:hover{
+box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.637);
+}
+.editar:hover{
+    box-shadow: 0px 0px 20px rgba(0, 132, 255, 0.637);
+}

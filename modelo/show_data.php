@@ -1,8 +1,6 @@
 <?php
         include("conexion.php");
         $opcion = (isset($_POST['id'])) ? $_POST['id'] : '';
-      //  $nombre=(isset($_POST['nombre'])) ? $_POST['nombre'] : '';
-
 
         switch ( $opcion) {
             case 1:
@@ -12,8 +10,11 @@
         {
              $array[]=$row;
         }
-                 echo json_encode($array);
+         echo json_encode($array);
         break;
         }
-
 ?>
+
+
+
+
