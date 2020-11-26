@@ -17,12 +17,12 @@ function full_table()
 	 	 for (let datosProdct of js) {
               tabla+=`
                  <tr>
-              <td>${datosProdct.id}</td>
-              <td>${datosProdct.nombre}</td>
-              <td>${datosProdct.precio}</td>
-              <td>${datosProdct.existencia}</td>
-              <td>${datosProdct.categoria}</td>
-              <td>
+              <td data-label="Id">${datosProdct.id}</td>
+              <td data-label="Nombre">${datosProdct.nombre}</td>
+              <td data-label="Precio">${datosProdct.precio}</td>
+              <td data-label="Exitencia">${datosProdct.existencia}</td>
+              <td data-label="Categoria">${datosProdct.categoria}</td>
+              <td data-label="Operaciones">
               <button class="eliminar"><img src="iconos/eliminar.png"width="15" height=""></button> 
               <button class="editar"><img src="iconos/editar.png" width="15" height=""></button> 
               </td>
@@ -32,3 +32,4 @@ function full_table()
         }
 	});
 }
+

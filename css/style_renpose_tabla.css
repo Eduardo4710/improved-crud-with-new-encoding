@@ -1,0 +1,56 @@
+@media screen and (max-width: 600px) {
+    table {
+        border: 0px;
+        background:transparent;
+        box-shadow: 0px 0px 30px rgba(250, 248, 248, 0.692);
+    }
+
+    th, td {
+        padding: 12px 17px;
+    }
+    .main {
+        background: transparent;
+    }
+    
+    table thead {
+        display: none;
+    }
+    table tr {
+        margin-bottom: 23px;
+        border: 1px solid #0e0e0ebd;
+        display: block;
+        border-radius: 10px;
+    }
+    table th, table td {
+        font-size: 18px;
+
+    }
+    table td {
+        display: block;
+        border-bottom: 1px solid #ddd;
+        text-align: right;
+    }
+    table  td {
+        border-bottom: 0px;
+    }
+    tr:hover td{
+        background-color: #fff8f807;
+        color: rgb(8, 8, 8);
+    }
+    table td:hover{
+     background: rgba(10, 10, 10, 0.274);
+    }
+    table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+       /* text-transform: uppercase;*/
+        float: left;
+    }
+
+    #agregar{
+
+        position: absolute;
+        right: 50px;
+        top:120px;
+        }
+}
