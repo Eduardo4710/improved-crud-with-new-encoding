@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_icono.css">
     <link rel="stylesheet" href="css/style_renpose_tabla.css">
+    <link rel="stylesheet" href="css/style_modal.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-
+   
     <title>Opreciones CRUD</title>
 </head>
 <body>
@@ -33,6 +34,37 @@
     <br><br>
     <br>
     <br>
+<!-- Modal para Registro-->
+	<div class="modal">
+		<form class="contenedor_modal">
+            <header><h2>Registrar Producto</h2></header>
+			<label id="cerrar"> X</label><br>
+             <div class="conte_input">
+                
+             <article  class="form_conter"> 
+             <label >Nombre:</label><br>
+                  <input type="text" name="" id="input_nom">
+                </article>
+             <article class="form_conter">
+                <label >Precio:</label><br>
+                <input type="text" name="" id="input_pre">
+             </article>
+             <article class="form_conter">
+                <label >Exitencia:</label><br>
+                <input type="text" name="" id="input_exis">
+             </article>
+             <article class="form_conter">
+                <label >Categoria:</label><br>
+                <input type="text" name="" id="input_catg">
+             </article>
+             </div>
+           <input type="button" value="Registrar" class="registrar" id="save_productos">
+      </form>
+      
+	</div>
+<!-- fin modal-->
+
+
     <div class="main">
         <table>
             <thead>
@@ -59,7 +91,10 @@
 <br><br>
 
     <script src="controlador/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="controlador/controlador_productos.js"></script>
+    <script src="controlador/alert.js"></script>
+
 </body>
 </html>
 		 <!--

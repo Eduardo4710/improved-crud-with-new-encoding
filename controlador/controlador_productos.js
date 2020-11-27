@@ -1,19 +1,40 @@
+/*--------------Abrir Modadl--------------- */
+$(function()
+{
+  $("#agregar").click(function()
+  {
+    $(".modal").addClass("modalMostra");
+    $(".contenedor_modal").addClass("contenedor_modal_mostra");
+  })
+
+  $("#cerrar").click(function ()
+  {
+    $(".modal").removeClass("modalMostra");
+    $(".contenedor_modal").removeClass("contenedor_modal_mostra");
+  })
+
+
+
+});
+/*--------------Mostrar Productos-------------- */
 $(function()
 {
 full_table();
+add_productos();
 });
 
 function full_table()
 {
+
     $.ajax({
 		url:'modelo/show_data.php',
         type:"post",
-        data:{ id:1},
+        data:{ option:1},
 		error:function(){alert("error de archivo");},
 		success:function(res){
         console.log(res);
    		var js=JSON.parse(res);
-	 	 var tabla;
+	 	  var tabla;
 	 	 for (let datosProdct of js) {
               tabla+=`
                  <tr>
@@ -32,4 +53,43 @@ function full_table()
         }
 	});
 }
+/*--------------Agregar Productos-------------- */
 
+
+
+function add_productos()
+{
+$("#save_productos").click(function()
+{
+    let _nombre=$("#input_nom").val();
+    let _precio=$("#input_pre").val();
+    let _existen=$("#input_exis").val();
+    let _categoria=$("#input_catg").val();
+  
+    if(_nombre !="" && _precio!="" && _existen !="" && _existen !="" && _categoria !="")
+    {
+      $.ajax({
+        url:'modelo/show_data.php',
+        type:"post",
+        data:{ option:2,nomb:_nombre,prec:_precio,exis:_existen,categ:_categoria},
+        error:function(){alert("error de archivo");},
+        success:function(res){
+          all_right();
+          full_table();
+          }
+      });
+       /*------cerrar modal------- */
+    $(".modal").removeClass("modalMostra");
+    $(".contenedor_modal").removeClass("contenedor_modal_mostra");
+    }
+    else
+    {
+      full_campas();
+    }
+    /*------limpiar inputs--------- */
+    $("#input_nom").val('');
+    $("#input_pre").val('');
+    $("#input_exis").val('');
+    $("#input_catg").val('');
+});
+}
