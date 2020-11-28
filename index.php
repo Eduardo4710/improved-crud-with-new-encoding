@@ -34,6 +34,7 @@
     <br><br>
     <br>
     <br>
+
 <!-- Modal para Registro-->
 	<div class="modal">
 		<form class="contenedor_modal">
@@ -47,17 +48,18 @@
                 </article>
              <article class="form_conter">
                 <label >Precio:</label><br>
-                <input type="text" name="" id="input_pre">
+                <input type="number"  name="" id="input_pre">
              </article>
              <article class="form_conter">
                 <label >Exitencia:</label><br>
-                <input type="text" name="" id="input_exis">
+                <input type="number"  name="" id="input_exis">
              </article>
              <article class="form_conter">
                 <label >Categoria:</label><br>
                 <input type="text" name="" id="input_catg">
              </article>
              </div>
+           
            <input type="button" value="Registrar" class="registrar" id="save_productos">
       </form>
       
@@ -82,7 +84,7 @@
        </tbody>
         </table>
     </div >
-   
+  
   
 <br><br>
 <br><br>

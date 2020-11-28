@@ -74,7 +74,9 @@
 	{
 		font-weight: 100;
 	}
-	input[type="text"]{
+	input[type="text"],
+	input[type="number"]
+	{
 	
 		margin-bottom:15px ;
 	    border: 1px solid rgb(160 140 140 / 55%);
@@ -128,7 +130,8 @@
 			width: 82%;
 		/*	background: red;*/
 	}
-	input[type="text"]{
+	input[type="text"],
+	input[type="number"]{
 		width: 150%;
 		/*background: rgb(0, 102, 255);*/
          }
@@ -141,16 +144,38 @@
 
 }
         @media screen and (max-width: 452px) {
-			input[type="text"]{
+
+			input[type="text"],
+			input[type="number"]{
 			width: 115%;
 			/*background: rgb(0, 102, 255);*/
 	          }
-	.contenedor_modal{
-		width: 82%;
-		/*background: rgb(81, 255, 0);*/
-      }
-	.conte_input
-	{
-	justify-content: left;
+	    .contenedor_modal{
+		  width: 82%;
+		  /*background: rgb(81, 255, 0);*/
+           }
+	    .conte_input
+			{
+			justify-content:left;
+			}
+
+			h1{
+			font-size: 30px;
+			margin-left: 32px;
+			}
+			h2{
+				font-size: 17px;
+			}
 	}
-	}
+
+	@media  (max-width:320px) {
+
+		h1{
+		font-size: 30px;
+		}
+		h2{
+			font-size: 17px;
+			padding: 10px;
+		}
+		
+}

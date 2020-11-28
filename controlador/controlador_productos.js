@@ -32,8 +32,9 @@ function full_table()
         data:{ option:1},
 		error:function(){alert("error de archivo");},
 		success:function(res){
-        console.log(res);
-   		var js=JSON.parse(res);
+
+       var js=JSON.parse(res);
+
 	 	  var tabla;
 	 	 for (let datosProdct of js) {
               tabla+=`
@@ -44,7 +45,7 @@ function full_table()
               <td data-label="Exitencia">${datosProdct.existencia}</td>
               <td data-label="Categoria">${datosProdct.categoria}</td>
               <td data-label="Operaciones">
-              <button class="eliminar"><img src="iconos/eliminar.png"width="15" height=""></button> 
+              <button class="eliminar"  id='eliminar'  data='${datosProdct}'><img src="iconos/eliminar.png"width="15" height=""></button> 
               <button class="editar"><img src="iconos/editar.png" width="15" height=""></button> 
               </td>
                  </tr>`
@@ -81,15 +82,71 @@ $("#save_productos").click(function()
        /*------cerrar modal------- */
     $(".modal").removeClass("modalMostra");
     $(".contenedor_modal").removeClass("contenedor_modal_mostra");
+     /*------limpiar inputs--------- */
+     $("#input_nom").val('');
+     $("#input_pre").val('');
+     $("#input_exis").val('');
+     $("#input_catg").val('');
     }
     else
     {
       full_campas();
     }
-    /*------limpiar inputs--------- */
-    $("#input_nom").val('');
-    $("#input_pre").val('');
-    $("#input_exis").val('');
-    $("#input_catg").val('');
+
 });
 }
+
+
+$(document).on("click","#eliminar",function(){prueva()});
+
+ function prueva()
+ {
+
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+     data_delite();
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
+  })
+ }
+
+ function data_delite()
+ {
+   alert("sdsdsds");
+ }
+
+  //var datos= $(this).attr("data");
+
+ /* Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        'Your file has been deleted.',
+        'success'
+      )
+    }
+  })*/
+
+
+
+
