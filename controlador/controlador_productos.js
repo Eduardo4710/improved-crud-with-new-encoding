@@ -97,35 +97,38 @@ $("#save_productos").click(function()
 }
 
 
-$(document).on("click","#eliminar",function(){prueva()});
+$(document).on("click","#eliminar",function(){
+
+  
+  var datos= $(this).attr("data");
+  console.log(datos); 
+
+});
 
  function prueva()
  {
 
-  Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-     data_delite();
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
-    }
-  })
+  // Swal.fire({
+  //   title: 'Are you sure?',
+  //   text: "You won't be able to revert this!",
+  //   icon: 'warning',
+  //   showCancelButton: true,
+  //   confirmButtonColor: '#3085d6',
+  //   cancelButtonColor: '#d33',
+  //   confirmButtonText: 'Yes, delete it!'
+  // }).then((result) => {
+  //   if (result.isConfirmed) {
+  //    data_delite();
+  //     Swal.fire(
+  //       'Deleted!',
+  //       'Your file has been deleted.',
+  //       'success'
+  //     )
+  //   }
+  // })
  }
 
- function data_delite()
- {
-   alert("sdsdsds");
- }
+ 
 
   //var datos= $(this).attr("data");
 

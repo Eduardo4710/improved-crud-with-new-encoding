@@ -19,9 +19,9 @@
 <header class="menu_opciones">
 
 <figure > 
-    <img class="user_logo" src="iconos/user.jpg"  alt="">
+     <!-- <img class="user_logo" src="iconos/user.jpg"  alt="">-->
 </figure>
-<h1>Administracion</h1>
+<!--<h1>Administracion</h1>-->
 
 </header>
 
@@ -30,7 +30,7 @@
     <br>
     <br>
 
-    <button  id="agregar"><img src="iconos/agregar.png" width="35" height=""></button>
+  <button  id="agregar"><img src="iconos/agregar.png" width="35" height=""></button>
     <br><br>
     <br>
     <br>
