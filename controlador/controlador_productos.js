@@ -45,8 +45,8 @@ function full_table()
               <td data-label="Exitencia">${datosProdct.existencia}</td>
               <td data-label="Categoria">${datosProdct.categoria}</td>
               <td data-label="Operaciones">
-              <button class="eliminar"  id='eliminar'  data='${datosProdct}'><img src="iconos/eliminar.png"width="15" height=""></button> 
-              <button class="editar"><img src="iconos/editar.png" width="15" height=""></button> 
+              <button class="eliminar"  id='eliminar'  data='${datosProdct.id}'><img src="iconos/eliminar.png"width="15" height=""></button> 
+              <button class="editar" id='editar'  data='${datosProdct.id}'><img src="iconos/editar.png" width="15" height=""></button> 
               </td>
                  </tr>`
                 }
@@ -96,60 +96,54 @@ $("#save_productos").click(function()
 });
 }
 
-
+/*--------------------Proceso de eliminar --------------------------- */
 $(document).on("click","#eliminar",function(){
 
-  
   var datos= $(this).attr("data");
-  console.log(datos); 
-
+  prueva(datos)
 });
 
- function prueva()
+ function prueva(id)
  {
 
-  // Swal.fire({
-  //   title: 'Are you sure?',
-  //   text: "You won't be able to revert this!",
-  //   icon: 'warning',
-  //   showCancelButton: true,
-  //   confirmButtonColor: '#3085d6',
-  //   cancelButtonColor: '#d33',
-  //   confirmButtonText: 'Yes, delete it!'
-  // }).then((result) => {
-  //   if (result.isConfirmed) {
-  //    data_delite();
-  //     Swal.fire(
-  //       'Deleted!',
-  //       'Your file has been deleted.',
-  //       'success'
-  //     )
-  //   }
-  // })
- }
-
- 
-
-  //var datos= $(this).attr("data");
-
- /* Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+  Swal.fire({
+    title: `¿Quieres eliminar este registro? ${id}`,
+    text: "¡No podrás revertir esto!¡Sí, bórralo!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: 'Eliminar!'
   }).then((result) => {
     if (result.isConfirmed) {
+     data_delite(id);
       Swal.fire(
         'Deleted!',
         'Your file has been deleted.',
         'success'
       )
     }
-  })*/
+  })
+ }
+  function  data_delite(id)
+  {
+    $.ajax({
+      url:'modelo/show_data.php',
+      type:"post",
+      data:{ option:3,clave:id},
+      error:function(){alert("error de archivo");},
+      success:function(res){
+
+        full_table();
+        }
+    });
+  }
+
+ /*--------------------Proceso de editar--------------------------- */
 
 
+$(document).on("click","#editar",function(){
 
-
+  var datos= $(this).attr("data");
+  console.log(datos);
+});

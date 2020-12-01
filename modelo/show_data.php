@@ -2,6 +2,7 @@
         include("conexion.php");
         $opcion = (isset($_POST['option'])) ? $_POST['option'] : '';
 
+        $id = (isset($_POST['clave'])) ? $_POST['clave'] : '';
         $nombre = (isset($_POST['nomb'])) ? $_POST['nomb'] : '';
         $precio = (isset($_POST['prec'])) ? $_POST['prec'] : '';
         $existencia = (isset($_POST['exis'])) ? $_POST['exis'] : '';
@@ -21,7 +22,11 @@
 
             $consulta="CALL sp_save_procdutos('$nombre','$precio','$existencia','$categiria' )";
             $resultado=mysqli_query($conexion, $consulta);
-           
+        break;
+        case 3:
+            $consulta="CALL sp_delite_procdutos('$id')";
+            $resultado=mysqli_query($conexion, $consulta); 
+
         break;
         }
 ?>
