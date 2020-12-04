@@ -129,5 +129,50 @@ $(function()
     });
   }
 
+/* --------------------Proceso de editar--------------------------- */
+  $(document).on("click","#editar",function(){
+      $(".modal_Editar").addClass("modalMostra");
+      $(".contenedor_modal_Editar").addClass("contenedor_modal_mostra");
+  //document.querySelector('.navPanel img').closest('td')
+     let   fila = $(this).closest("tr");
+     id_produ = parseInt(fila.find('td:eq(0)').text());
+      let name_product = fila.find('td:eq(1)').text();
+      let price_product  = fila.find('td:eq(2)').text();
+      let existence_product = fila.find('td:eq(3)').text();
+      let category_product = fila.find('td:eq(4)').text();
+      $("#input_nom_Editar").val(name_product);
+      $("#input_pre_Editar").val(price_product);
+      $("#input_exis_Editar").val(existence_product);
+      $("#input_catg_Editar").val(category_product);
 
+  });
+
+  $("#Editar").click(function ()
+  {
+    let name_edi= $("#input_nom_Editar").val();
+    let price_edi=$("#input_pre_Editar").val();
+    let exitence_edi=$("#input_exis_Editar").val();
+    let category_edi= $("#input_catg_Editar").val();
+    if(name_edi !="" && price_edi!="" && exitence_edi !="" && category_edi !="")
+    {
+    $.ajax({
+      url:'modelo/show_data.php',
+      type:"post",
+      data:{ option:4,clave:id_produ,nomb:name_edi,prec:price_edi,exis:exitence_edi,categ:category_edi},
+      error:function(){alert("error de archivo");},
+      success:function(res){
+       all_right();
+        full_table();
+        }
+    });
+    /*------cerrar modal------- */
+    $(".modal_Editar").removeClass("modalMostra");
+    $(".contenedor_modal_Editar").removeClass("contenedor_modal_mostra");
+  }
+  else
+  {
+    full_campas();
+  }
+
+  })
 })
