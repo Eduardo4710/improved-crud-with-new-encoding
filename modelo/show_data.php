@@ -28,6 +28,11 @@
             $resultado=mysqli_query($conexion, $consulta); 
 
         break;
+        case 4:
+            $consulta="CALL sp_editar_productos('$id','$nombre','$precio','$existencia','$categiria')";
+            $resultado=mysqli_query($conexion, $consulta); 
+        break;
+        
         }
 ?>
 

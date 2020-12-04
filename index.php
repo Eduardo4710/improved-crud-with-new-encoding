@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style_icono.css">
     <link rel="stylesheet" href="css/style_renpose_tabla.css">
     <link rel="stylesheet" href="css/style_modal.css">
+    <link rel="stylesheet" href="css/style_modal_Editar.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,8 +39,8 @@
 <!-- Modal para Registro-->
 	<div class="modal">
 		<form class="contenedor_modal">
-            <header><h2>Registrar Producto</h2></header>
-			<label id="cerrar"> X</label><br>
+            <header class="cabezera"><h2>Registrar Producto</h2></header>
+			<label class="cerrar" id="cerrar"> X</label><br>
              <div class="conte_input">
                 
              <article  class="form_conter"> 
@@ -66,7 +67,36 @@
 	</div>
 <!-- fin modal-->
 
-
+<!-- Modal para Editar-->
+<div class="modal_Editar">
+		<form class="contenedor_modal_Editar">
+            <header  class="cabezera" ><h2>Registrar Producto</h2></header>
+			<label class="cerrar_editar" id="cerrar_editar"> X</label><br>
+             <div class="conte_input">
+                
+             <article  class="form_conter"> 
+             <label >Nombre:</label><br>
+                  <input type="text" name="" id="input_nom_Editar">
+                </article>
+             <article class="form_conter">
+                <label >Precio:</label><br>
+                <input type="number"  name="" id="input_pre_Editar">
+             </article>
+             <article class="form_conter">
+                <label >Exitencia:</label><br>
+                <input type="number"  name="" id="input_exis_Editar">
+             </article>
+             <article class="form_conter">
+                <label >Categoria:</label><br>
+                <input type="text" name="" id="input_catg_Editar">
+             </article>
+             </div>
+           
+           <input type="button" value="Registrar" class="registrar" id="Editar">
+      </form>
+      
+	</div>
+<!-- fin modal-->
     <div class="main">
         <table>
             <thead>

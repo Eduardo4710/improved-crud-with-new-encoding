@@ -1,4 +1,4 @@
-/*--------------Abrir Modadl--------------- */
+/*--------------Funcionalidades del modal y  llamadas de las funciones full_table y add_product--------------- */
 $(function()
 {
   $("#agregar").click(function()
@@ -12,30 +12,27 @@ $(function()
     $(".modal").removeClass("modalMostra");
     $(".contenedor_modal").removeClass("contenedor_modal_mostra");
   })
-
-
-
+/*==========Cerrar modal para editar============= */
+  $("#cerrar_editar").click(function cerra_modal_editar()
+  {
+    $(".modal_Editar").removeClass("modalMostra");
+    $(".contenedor_modal_Editar").removeClass("contenedor_modal_mostra");
+  })
+  add_productos();
+  full_table();
+  
 });
 /*--------------Mostrar Productos-------------- */
-$(function()
-{
-full_table();
-add_productos();
-});
-
 function full_table()
 {
-
-    $.ajax({
+   $.ajax({
 		url:'modelo/show_data.php',
         type:"post",
         data:{ option:1},
 		error:function(){alert("error de archivo");},
 		success:function(res){
-
-       var js=JSON.parse(res);
-
-	 	  var tabla;
+         var js=JSON.parse(res);
+       var tabla;
 	 	 for (let datosProdct of js) {
               tabla+=`
                  <tr>
@@ -55,9 +52,6 @@ function full_table()
 	});
 }
 /*--------------Agregar Productos-------------- */
-
-
-
 function add_productos()
 {
 $("#save_productos").click(function()
@@ -67,7 +61,7 @@ $("#save_productos").click(function()
     let _existen=$("#input_exis").val();
     let _categoria=$("#input_catg").val();
   
-    if(_nombre !="" && _precio!="" && _existen !="" && _existen !="" && _categoria !="")
+    if(_nombre !="" && _precio!="" && _existen !=""  && _categoria !="")
     {
       $.ajax({
         url:'modelo/show_data.php',
@@ -92,45 +86,41 @@ $("#save_productos").click(function()
     {
       full_campas();
     }
-
 });
 }
 
+$(function()
+{
+  var id_produ;
 /*--------------------Proceso de eliminar --------------------------- */
-$(document).on("click","#eliminar",function(){
-
-  var datos= $(this).attr("data");
-  prueva(datos)
-});
-
- function prueva(id)
- {
-
-  Swal.fire({
-    title: `¿Quieres eliminar este registro? ${id}`,
-    text: "¡No podrás revertir esto!¡Sí, bórralo!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Eliminar!'
-  }).then((result) => {
-    if (result.isConfirmed) {
-     data_delite(id);
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
-    }
-  })
- }
-  function  data_delite(id)
+  $(document).on("click","#eliminar",function(){
+    let   fila = $(this).closest("tr");
+    id_produ = parseInt(fila.find('td:eq(0)').text());
+    Swal.fire({
+      title: `¿Quieres eliminar este registro? ${id_produ}`,
+      text: "¡No podrás revertir esto!¡Sí, bórralo!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Eliminar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+       data_delite(id_produ);
+        Swal.fire(
+          'Eliminado!',
+          'Proceso exitos.',
+          'success'
+        )
+      }
+    })
+  });
+  function  data_delite(id_produ)
   {
     $.ajax({
       url:'modelo/show_data.php',
       type:"post",
-      data:{ option:3,clave:id},
+      data:{ option:3,clave:id_produ},
       error:function(){alert("error de archivo");},
       success:function(res){
 
@@ -139,11 +129,5 @@ $(document).on("click","#eliminar",function(){
     });
   }
 
- /*--------------------Proceso de editar--------------------------- */
 
-
-$(document).on("click","#editar",function(){
-
-  var datos= $(this).attr("data");
-  console.log(datos);
-});
+})
