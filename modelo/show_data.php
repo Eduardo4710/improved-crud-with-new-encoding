@@ -32,7 +32,6 @@
             $consulta="CALL sp_editar_productos('$id','$nombre','$precio','$existencia','$categiria')";
             $resultado=mysqli_query($conexion, $consulta); 
         break;
-        
         }
 ?>
 

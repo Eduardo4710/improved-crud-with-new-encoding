@@ -18,9 +18,9 @@ $(function()
     $(".modal_Editar").removeClass("modalMostra");
     $(".contenedor_modal_Editar").removeClass("contenedor_modal_mostra");
   })
-  add_productos();
+ 
   full_table();
-  
+  add_productos();
 });
 /*--------------Mostrar Productos-------------- */
 function full_table()
